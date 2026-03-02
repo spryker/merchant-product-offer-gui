@@ -18,9 +18,6 @@ class MerchantProductOfferReader implements MerchantProductOfferReaderInterface
      */
     protected $merchantFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantProductOfferGui\Dependency\Facade\MerchantProductOfferGuiToMerchantFacadeInterface $merchantFacade
-     */
     public function __construct(MerchantProductOfferGuiToMerchantFacadeInterface $merchantFacade)
     {
         $this->merchantFacade = $merchantFacade;

@@ -12,18 +12,8 @@ use Spryker\Zed\Gui\Communication\Table\TableConfiguration;
 
 interface MerchantProductOfferTableExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QueryCriteriaTransfer $queryCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\QueryCriteriaTransfer
-     */
     public function expandQueryCriteria(QueryCriteriaTransfer $queryCriteriaTransfer): QueryCriteriaTransfer;
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     public function expandTableConfiguration(TableConfiguration $config): TableConfiguration;
 
     /**

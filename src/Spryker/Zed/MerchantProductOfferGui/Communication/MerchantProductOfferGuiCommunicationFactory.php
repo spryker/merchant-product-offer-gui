@@ -23,9 +23,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 class MerchantProductOfferGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantProductOfferGui\Communication\Expander\MerchantProductOfferTableExpanderInterface
-     */
     public function createMerchantProductOfferTableExpander(): MerchantProductOfferTableExpanderInterface
     {
         return new MerchantProductOfferTableExpander(
@@ -34,33 +31,21 @@ class MerchantProductOfferGuiCommunicationFactory extends AbstractCommunicationF
         );
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\Request
-     */
     public function getRequest(): Request
     {
         return $this->getRequestStack()->getCurrentRequest();
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RequestStack
-     */
     public function getRequestStack(): RequestStack
     {
         return $this->getProvidedDependency(MerchantProductOfferGuiDependencyProvider::SERVICE_REQUEST_STACK);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductOfferGui\Communication\Reader\MerchantProductOfferReaderInterface
-     */
     public function createMerchantProductOfferReader(): MerchantProductOfferReaderInterface
     {
         return new MerchantProductOfferReader($this->getMerchantFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductOfferGui\Dependency\Facade\MerchantProductOfferGuiToMerchantFacadeInterface
-     */
     public function getMerchantFacade(): MerchantProductOfferGuiToMerchantFacadeInterface
     {
         return $this->getProvidedDependency(MerchantProductOfferGuiDependencyProvider::FACADE_MERCHANT);
